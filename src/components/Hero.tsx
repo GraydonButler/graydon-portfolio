@@ -14,12 +14,14 @@ export default function Hero() {
   return (
     <section id="hero" className="min-h-[120vh] relative overflow-hidden bg-black">
       <div
-        className="fixed inset-0 -z-10"
+        className="fixed inset-0 -z-50"
         style={{
+          width: '100%',
+          height: '250%',
           backgroundImage: 'url(/images/roots-inverted.svg)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          transform: `scale(1.5) translateY(${scrollY * 0.1}px)`,
+          transform: `scale(1) translateY(-${scrollY * 0.4}px)`,
           filter: 'brightness(0) invert(1)',
         }}
       />

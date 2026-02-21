@@ -60,8 +60,8 @@ export default function Navbar() {
                 href={item.href}
                 onClick={(e) => scrollToSection(e, item.href)}
                 className={`text-lg font-light tracking-wider transition-colors hover:text-gray-300 ${activeSection === item.href.substring(1)
-                    ? 'text-white'
-                    : 'text-gray-400'
+                  ? 'text-white'
+                  : 'text-gray-400'
                   }`}
               >
                 {item.name}

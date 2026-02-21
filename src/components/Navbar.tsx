@@ -46,43 +46,23 @@ export default function Navbar() {
       animate={{ y: 0 }}
       className="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-sm"
     >
-      <div className="container mx-auto px-6 py-4">
-        <div className="flex items-center justify-between">
-          {/* Left nav items */}
-          <div className="flex gap-8">
-            {navItems.slice(0, 2).map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                onClick={(e) => scrollToSection(e, item.href)}
-                className={`text-sm font-light tracking-wider transition-colors hover:text-gray-300 ${
-                  activeSection === item.href.substring(1)
-                    ? 'text-white'
-                    : 'text-gray-400'
-                }`}
-              >
-                {item.name}
-              </a>
-            ))}
-          </div>
-
+      <div className="container mx-auto px-6 py-8">
+        <div className="flex items-center gap-6">
           {/* Logo */}
-          <a href="#" className="text-2xl font-serif italic">
+          <a href="#" className="text-4xl font-serif italic mr-12">
             G
           </a>
-
-          {/* Right nav items */}
-          <div className="flex gap-8">
-            {navItems.slice(2).map((item) => (
+          {/* All nav items */}
+          <div className="flex gap-12">
+            {navItems.map((item) => (
               <a
                 key={item.name}
                 href={item.href}
                 onClick={(e) => scrollToSection(e, item.href)}
-                className={`text-sm font-light tracking-wider transition-colors hover:text-gray-300 ${
-                  activeSection === item.href.substring(1)
+                className={`text-lg font-light tracking-wider transition-colors hover:text-gray-300 ${activeSection === item.href.substring(1)
                     ? 'text-white'
                     : 'text-gray-400'
-                }`}
+                  }`}
               >
                 {item.name}
               </a>

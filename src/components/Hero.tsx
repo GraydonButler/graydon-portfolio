@@ -1,9 +1,29 @@
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
+
+
 export default function Hero() {
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => setScrollY(window.scrollY);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
   return (
-    <section id="hero" className="min-h-screen relative overflow-hidden bg-black">
-      <div className="container mx-auto px-6 min-h-screen flex items-center py-20 relative z-10">
+    <section id="hero" className="min-h-[120vh] relative overflow-hidden bg-black">
+      <div
+        className="fixed inset-0 -z-10"
+        style={{
+          backgroundImage: 'url(/images/roots-inverted.svg)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          transform: `scale(1.5) translateY(${scrollY * 0.1}px)`,
+          filter: 'brightness(0) invert(1)',
+        }}
+      />
+      <div className="container mx-auto px-6 min-h-[120vh] flex items-center py-32 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 w-full items-center">
           {/* Left Column - Text Content */}
           <div className="flex flex-col gap-8">
